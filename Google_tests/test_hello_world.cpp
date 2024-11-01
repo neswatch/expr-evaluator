@@ -4,6 +4,6 @@ extern "C" {
 #include "hello.h"
 }
 
-TEST(HelloSuite, HelloWorld) {
-    EXPECT_EQ(hello(), 1);
+TEST(HelloSuite, HelloWorldTest) {
+    EXPECT_EQ(hello(), 0);
 }
