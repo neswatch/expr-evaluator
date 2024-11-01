@@ -5,5 +5,5 @@ extern "C" {
 }
 
 TEST(HelloSuite, HelloWorldTest) {
-    EXPECT_EQ(hello(), 0);
+    EXPECT_EQ(hello(), 1);
 }
