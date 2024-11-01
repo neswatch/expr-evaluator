@@ -1,5 +1,8 @@
 name: CMake on a single platform
 
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
 on:
   push:
     branches: [ "master" ]
