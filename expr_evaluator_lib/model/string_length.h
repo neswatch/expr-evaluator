@@ -1,0 +1,10 @@
+//
+// Created by julie on 04/11/2024.
+//
+
+#ifndef EXPR_EVALUATOR_STRING_LENGTH_H
+#define EXPR_EVALUATOR_STRING_LENGTH_H
+
+#define MAX_STR_LEN 1024
+
+#endif //EXPR_EVALUATOR_STRING_LENGTH_H

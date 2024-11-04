@@ -1,13 +1,8 @@
 project(expr-evaluator-lib C)
 
-SET(HEADER_FILES
-        hello.h
 
-)
-
-SET(SOURCE_FILES
-        hello.c
-
-)
-
-add_library(expr_evaluator_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})
+add_library(expr_evaluator_lib STATIC
+        service/input_manager.c
+        service/input_manager.h
+        model/error/exception.h
+        model/string_length.h)
