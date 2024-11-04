@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <string.h>
-
-#include "input_manager.h"
+#include <malloc.h>
+#include "model/string_length.h"
+#include "model/error/exception.h"
+#include "service/input_manager.h"
 
 
 int main(void) {
     char str[MAX_STR_LEN];
     int exit_status = 0;
+    Exception exception_manager;
+    exception_manager.code = 0;
 
     do
     {

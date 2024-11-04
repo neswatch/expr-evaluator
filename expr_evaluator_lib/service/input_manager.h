@@ -5,8 +5,10 @@
 #ifndef INPUT_MANAGER_H
 #define INPUT_MANAGER_H
 
-#define MAX_STR_LEN 1024
+#include "model/error/exception.h"
 
 int is_exit_input(const char *input);
+
+double evaluate_expression(const char *expression, Exception *exception_manager);
 
 #endif //INPUT_MANAGER_H

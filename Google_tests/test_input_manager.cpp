@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-#include "input_manager.h"
+#include "service/input_manager.h"
 }
 
 TEST(IsExitInput, shouldWorkWithQuit)
@@ -27,3 +27,36 @@ TEST(IsExitInput, shouldNotWorkWithNumbers)
     const int result = is_exit_input("2+2");
     ASSERT_EQ(0, result);
 }
+
+TEST(EvaluationAddition, shouldWorkWithTwoNumbers)
+{
+    Exception exception_manager;
+    const double result = evaluate_expression("2+2", &exception_manager);
+    ASSERT_EQ(4.0, result);
+    ASSERT_EQ(0, exception_manager.code);
+}
+
+TEST(EvaluationAddition, shouldWorkWithTwoNumbersAndSpaces)
+{
+Exception exception_manager;
+const double result = evaluate_expression("2+ 2", &exception_manager);
+ASSERT_EQ(4, result);
+ASSERT_EQ(0, exception_manager.code);
+}
+
+TEST(EvaluationAddition, shouldWorkWithThreeNumbers)
+{
+Exception exception_manager;
+const double result = evaluate_expression("2+2+3", &exception_manager);
+ASSERT_EQ(7.0, result);
+ASSERT_EQ(0, exception_manager.code);
+}
+
+/*
+TEST(EvaluateExpression, shouldNotWorkWhenExpressionIsInvalid) {
+    Exception exception_manager;
+    const double result = evaluate_expression("2+", &exception_manager);
+    ASSERT_EQ(0, result);
+    ASSERT_EQ(INVALID_EXPRESSION, exception_manager.code);
+}
+ */
