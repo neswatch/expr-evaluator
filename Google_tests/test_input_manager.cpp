@@ -48,11 +48,10 @@ TEST(EvaluationAddition, shouldWorkWithThreeNumbers) {
     ASSERT_EQ(0, exception_manager.code);
 }
 
-/*
 TEST(EvaluateExpression, shouldNotWorkWhenExpressionIsInvalid) {
     Exception exception_manager;
+    exception_manager.code = 0;
     const double result = evaluate_expression("2+", &exception_manager);
     ASSERT_EQ(0, result);
     ASSERT_EQ(INVALID_EXPRESSION, exception_manager.code);
 }
- */
