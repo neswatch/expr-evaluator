@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <malloc.h>
 #include "model/string_length.h"
 #include "model/error/exception.h"
 #include "service/input_manager.h"
