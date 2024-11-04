@@ -20,7 +20,15 @@ int main(void) {
         exit_status = is_exit_input(str);
         if (!exit_status)
         {
-            printf("%s", str);
+            double result = evaluate_expression(str, &exception_manager);
+            if (exception_manager.code == 0)
+            {
+                printf("%.3f", result);
+            }
+            else
+            {
+                printf("Error: %s", exception_manager.message);
+            }
 
             printf("\n");
         }

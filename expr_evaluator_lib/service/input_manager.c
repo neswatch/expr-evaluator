@@ -58,6 +58,7 @@ double evaluate_expression(const char *expression, Exception *exception_manager)
             i++;
         } else {
             exception_manager->code = INVALID_EXPRESSION;
+            strcpy(exception_manager->message, "Invalid expression");
             return 0;
         }
     }
