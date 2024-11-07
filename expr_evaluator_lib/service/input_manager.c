@@ -23,7 +23,7 @@ int is_a_number(const char c)
 
 int is_operator(const char c)
 {
-    return c == '+';
+    return c == '+' || c == '-';
 }
 
 double sum(const int* elts, const int elts_size)
@@ -40,6 +40,7 @@ double evaluate_expression(const char *expression, Exception *exception_manager)
     int elts[MAX_TMP_ARRAY_SIZE];
     int elts_size = 0;
     int has_operator = 0;
+    int number_sign = 1;
 
     char tmp[MAX_STR_LEN];
     int i = 0;
@@ -54,8 +55,12 @@ double evaluate_expression(const char *expression, Exception *exception_manager)
             }
             tmp[j] = '\0';
             elts[elts_size] = (int) strtol(tmp, NULL, 10);
+            elts[elts_size] *= number_sign;
+
             elts_size++;
+            number_sign = 1;
         } else if (is_operator(expression[i]) || expression[i] == ' ') {
+            if (expression[i] == '-') number_sign = -1;
             has_operator = 1;
             i++;
         } else {
